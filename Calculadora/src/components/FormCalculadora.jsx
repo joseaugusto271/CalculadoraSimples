@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './form.module.css'
 
 function FormCalculadora() {
     const [numero1, setNumero1] = useState('')
@@ -32,10 +33,10 @@ function FormCalculadora() {
         setResultado('')
     }
   return (
-    <div>
+    <div className='container'>
         <h1>Calculadora Simples</h1>
         <form onSubmit={calcular}>
-            <div className="entrada">
+            <div className={styles.entradas}>
                 <input
                     type="number"
                     name="num1"
@@ -61,12 +62,12 @@ function FormCalculadora() {
                 </select>
             </div>
 
-            <div className="btn">
+            <div className={styles.btn}>
                 <input type="submit" value="Calcular" />
                 <input type="button" value="Limpar" onClick={limpar}/>
             </div>
 
-            <div className="resultado">
+            <div className={styles.resultado}>
                 <h2>Resultado</h2>
                 <p>{resultado}</p>
             </div>
